@@ -29,8 +29,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
-group :test do
-  gem 'rspec-rails', '>= 2.0.0.beta.10'
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.0.beta.17"
 end
 
 group :cucumber do
@@ -38,7 +38,6 @@ group :cucumber do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber', '0.8.5'
-  gem 'rspec-rails', '>= 2.0.0.beta.10'
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
 end  
