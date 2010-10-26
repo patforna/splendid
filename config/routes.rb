@@ -1,4 +1,7 @@
 Splendid::Application.routes.draw do
+  
+  get "send/index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

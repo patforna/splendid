@@ -9,10 +9,10 @@ module NavigationHelpers
     case page_name
 
     when /the home\s?page/
-      '/'
+      root_path
       
     when /the send message page/
-      '/'  
+      send_index_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

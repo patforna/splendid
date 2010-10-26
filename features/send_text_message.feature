@@ -5,9 +5,9 @@ Feature: Send text message
   
   Scenario: Send using phone number
     Given I am on the send message page
-    Given I fill in the phone number
-    Given I fill in the message
-    When I press send
+    And I fill in "recipient" with "+447807922168"
+    And I fill in "message" with "Hello World"
+    When I press "send"
     Then the message should be sent to the recipient
     
   
