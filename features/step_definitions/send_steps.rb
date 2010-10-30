@@ -1,3 +1,4 @@
-Then /^the message should be sent to the recipient$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^the message should have been delivered$/ do
+  fake_server = FakeServer.new
+  assert fake_server.received_request?
 end

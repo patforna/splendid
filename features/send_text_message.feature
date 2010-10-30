@@ -8,7 +8,7 @@ Feature: Send text message
     And I fill in "recipient" with "+447807922168"
     And I fill in "message" with "Hello World"
     When I press "send"
-    Then the message should be sent to the recipient
+    Then the message should have been delivered
     
   
   
