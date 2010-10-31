@@ -1,6 +1,7 @@
 Splendid::Application.routes.draw do
   
   get "message/show"
+  post "message/send"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
