@@ -12,7 +12,7 @@ module NavigationHelpers
       root_path
       
     when /the send message page/
-      send_index_path
+      message_show_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
