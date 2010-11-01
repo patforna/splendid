@@ -1,8 +1,8 @@
 class MessageController < ApplicationController
   def show
-    
   end
-  
-  def send
+
+  def deliver
   end
+
 end

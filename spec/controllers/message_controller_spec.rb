@@ -1,7 +1,19 @@
 require 'spec_helper'
 
 describe MessageController do
-  it  "should populate the message" do
-    post :send
+
+  describe "GET 'show'" do
+    it "should be successful" do
+      get 'show'
+      response.should be_success
+    end
   end
+
+  describe "GET 'deliver'" do
+    it "should be successful" do
+      get 'deliver'
+      response.should be_success
+    end
+  end
+
 end

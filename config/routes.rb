@@ -1,5 +1,7 @@
 Splendid::Application.routes.draw do
   
+  get "message/deliver"
+
   get "message/show"
   post "message/send"
   
