@@ -1,8 +1,10 @@
 class MessageController < ApplicationController
-  def show
+  def new
+    @message = Message.new
   end
 
-  def deliver
+  def create
+    redirect_to(new_message_url)
   end
 
 end
