@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101024161819) do
+ActiveRecord::Schema.define(:version => 20101101224531) do
+
+  create_table "messages", :force => true do |t|
+    t.string   "recipient"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"

@@ -1,3 +1,3 @@
 Splendid::Application.routes.draw do
-  resources :message, :only => [:new, :create]
+  resources :messages, :only => [:new, :create]
 end
