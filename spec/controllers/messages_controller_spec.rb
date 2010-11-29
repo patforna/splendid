@@ -9,7 +9,7 @@ describe MessagesController do
   end
 
   describe "GET new" do
-    it "assigns a new message as @message" do
+    it "should assign a new message as @message" do
       Message.stub(:new) { mock_message }
       get :new
       assigns(:message).should be(mock_message)
@@ -19,13 +19,13 @@ describe MessagesController do
   describe "POST create" do
 
     describe "with valid params" do
-      it "assigns a newly created message as @message" do
+      it "should assign the new message as @message" do
         Message.stub(:new).with({'these' => 'params'}) { mock_message }
         post :create, :message => {'these' => 'params'}
         assigns(:message).should be(mock_message)
       end
 
-      it "redirects to the created message" do
+      it "should redirect to the created message" do
         Message.stub(:new) { mock_message }
         post :create, :message => {}
         response.should redirect_to(new_message_url)
