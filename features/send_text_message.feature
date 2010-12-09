@@ -4,6 +4,7 @@ Feature: Send text message
   I want to send test messages
   
   Scenario: Send using phone number
+    Given the Message Gateway is up and running
     Given I am on the send message page
     And I fill in "message_recipient" with "+447807922168"
     And I fill in "message_message" with "Hello World"
