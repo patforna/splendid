@@ -1,35 +1,39 @@
 require 'spec_helper'
 
 describe MessagesController do
-
-  def mock_message(stubs={})
-    (@mock_message ||= mock_model(Message).as_null_object).tap do |message|
-      message.stub(stubs) unless stubs.empty?
-    end
+  
+  let(:message) { mock_model(Message).as_null_object }
+  
+  before(:each) do
+    Message.stub(:new).and_return(message)
   end
 
   describe "GET new" do
-    it "should assign a new message as @message" do
-      Message.stub(:new) { mock_message }
+    it "should assign new message" do
       get :new
-      assigns(:message).should be(mock_message)
+      assigns(:message).should be(message)
     end
   end
 
   describe "POST create" do
 
     describe "with valid params" do
-      it "should assign the new message as @message" do
-        Message.stub(:new).with({'these' => 'params'}) { mock_message }
-        post :create, :message => {'these' => 'params'}
-        assigns(:message).should be(mock_message)
+      it "should assign new message using the parameters given" do
+        Message.should_receive(:new).with("recipient" => "anonymous")
+        post :create, :message => { "recipient" => "anonymous" }
+        assigns(:message).should be(message)
+      end
+      
+      it "should save message" do
+        message.should_receive(:save)
+        post :create
       end
 
       it "should redirect to the created message" do
-        Message.stub(:new) { mock_message }
-        post :create, :message => {}
+        post :create
         response.should redirect_to(new_message_url)
       end
+      
     end
   end
 end

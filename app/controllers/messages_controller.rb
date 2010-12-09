@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
+    @message.save
     redirect_to(new_message_url)
   end
 

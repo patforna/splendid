@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe WebClient do
 
-  DESTINATION = "http://xml1.aspsms.com/xmlsvr.asp"
+  # FIXME use config
+  # DESTINATION = "http://xml1.aspsms.com/xmlsvr.asp"
+  DESTINATION = "http://localhost:9090/xmlsvr.asp"
 
   before(:each) do
     stub_request(:any, /.*/)

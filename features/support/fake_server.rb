@@ -1,7 +1,7 @@
 class FakeServer
   def initialize
     Thread.new do
-      SinatraBase.run!
+      SinatraBase.run! :host => 'localhost', :port => 9090
     end
     sleep 1
   end
@@ -13,7 +13,7 @@ end
 
 require 'sinatra/base'
 class SinatraBase < Sinatra::Base
-  get '/' do
+  post '/*' do
     RequestStore.instance.store(request)
   end
 end
