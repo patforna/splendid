@@ -1,5 +1,6 @@
 class FakeServer
   def initialize
+    WebMock.allow_net_connect!
     Thread.new do
       SinatraBase.run! :host => 'localhost', :port => 9090
     end

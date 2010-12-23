@@ -1,15 +1,20 @@
+require 'nokogiri'
+
 class XmlBuilder
-  
+
   SEND = 'SendTextSMS'
-  
+
   def from(message)
     Nokogiri::XML::Builder.new do
       aspsms {
-        recipient {
-          phonenumber { text message.recipient }
+        Userkey { text 'foo' }
+        Password { text 'bar' }
+        Originator {text 'baz' }
+        Recipient {
+          PhoneNumber { text message.recipient }
         }
-        messagedata { text message.message }
-        action { text SEND }
+        MessageData { text message.message }
+        Action { text SEND }
       }
     end.to_xml
   end

@@ -18,6 +18,9 @@ describe MessageService do
       @webClient.should_receive(:post).with(:some_xml)
       @service.send(:message)
     end
+    
+    it "should deal with error responses"
+    # <aspsms><ErrorCode>26</ErrorCode><ErrorDescription>IP-Address not Authorized for this Operation</ErrorDescription></aspsms>
   end
 
 end

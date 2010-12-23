@@ -1,0 +1,11 @@
+development:
+  host: localhost
+  port: 9090  
+
+test:
+  host: localhost
+  port: 9090  
+
+production:
+  host: xml1.aspsms.com
+  port: 5061
