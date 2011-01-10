@@ -32,9 +32,9 @@ describe XmlBuilder do
     end
     
     it "should serialise the message content" do
-      message = Message.new :message => "Fish like plankton"
+      message = Message.new :content => "Fish like plankton"
       xml = build_from(message)
-      xml.aspsms.MessageData.content.should == message.message
+      xml.aspsms.MessageData.content.should == message.content
     end
     
     it "should set the action to SendTextSMS" do

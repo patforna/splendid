@@ -9,11 +9,11 @@ class XmlBuilder
       aspsms {
         Userkey { text 'foo' }
         Password { text 'bar' }
-        Originator {text 'baz' }
+        Originator {text '+447807922168' }
         Recipient {
           PhoneNumber { text message.recipient }
         }
-        MessageData { text message.message }
+        MessageData { text message.content }
         Action { text SEND }
       }
     end.to_xml

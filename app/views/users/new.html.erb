@@ -1,0 +1,13 @@
+<%= form_for(@user) do |f| %>
+  <div>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div>
+    <%= f.label :userkey %><br />
+    <%= f.text_area :userkey %>
+  </div>
+  <div>
+    <%= f.submit "register" %>
+  </div>
+<% end %>
